@@ -1,0 +1,248 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spread logo and contact info */
+    background-color: white;
+    color: #333;
+    padding: 10px 15px;
+    /* padding: 15px 18px 15px 2px; */
+    font-size: 0.9rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo Styling */
+.logo img {
+    /* width: 100%; */
+    /* max-width: 239px; */
+    max-width: 150px;
+    height: auto;
+    /* margin-left: 10px; */
+    
+}
+
+.contact-info {
+    color: grey;
+    letter-spacing: 0.5px; /* Add some spacing between letters */
+    font-size: 1.15rem;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.hidden-email {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Make the color inherit from the parent element */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+
+/* Navbar (below the top bar) */
+/* .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    margin-top: 60px; 
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+} */
+
+/* Hero Section */
+.hero {
+    background: url('background.png') no-repeat center top; /* Focus on the top of the image */
+    background-position: center 10%; /* Adjusts the image slightly downwards while keeping the top part in focus */
+    background-size: cover; /* Ensure the image covers the entire area */
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+
+.hero-content h1 {
+    font-size: 4.5rem;        /* Font size */
+    margin-bottom: 0px;    /* Margin below the heading */
+    padding: 20px 210px;    /* Padding inside the heading */
+    font-weight: normal;     /* Ensure text is not bold */
+    text-align: left;        /* Align text to the left */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    padding: 0px 210px; 
+    font-weight: normal;     /* Ensure text is not bold */
+    text-align: left;        /* Align text to the left */
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #FAFAFA;
+}
+
+.services h2 {
+    padding: 50px; /* This keeps the padding around the h2 */
+    font-size: 3.3rem;
+    font-weight: normal;
+}
+
+.services h3 {
+    font-size: 3.3rem;
+    font-weight: normal;
+    color: #9FA0B1;
+    margin-top: -50px; /* Add top margin to create space above the h3 */
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px; /* Spacing between service boxes */
+}
+
+.service-box {
+    flex: 1 1 calc(100% - 40px); /* Adjust this if needed for mobile */
+    max-width: 550px; /* Increase max width */
+    min-height: 150px; /* Set a minimum height */
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    position: relative;
+}
+
+.service-image {
+    max-width: 50px;
+    height: auto;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.service-box h4 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-top: 65px; /* Space directly below the image */
+}
+
+.service-box p {
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin-top: 10px; /* Add gap between h4 and p */
+    color: #4d5663;
+}
+
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: row; /* Keep items in a row */
+        align-items: center; /* Vertically align logo and contact info */
+        justify-content: space-between; /* Ensure proper spacing */
+        gap: 10px; /* Add space between elements */
+    }
+
+    .logo img {
+        max-width: 90px; /* Smaller size on mobile */
+        height: auto;
+    }
+
+    
+
+    .hero-content h1 {
+        font-size: 2rem; /* Adjusted font size for mobile */
+        margin-bottom: 0px;
+        padding: 20px 10px; /* Reduced padding for mobile */
+        font-weight: normal;
+        text-align: left;
+    }
+    
+    .hero-content p {
+        font-size: 1rem; /* Adjusted font size for mobile */
+        padding: 0px 10px; /* Reduced padding for mobile */
+        font-weight: normal;
+        text-align: left;
+    }
+
+    .services h2 {
+        padding: 50px; /* This keeps the padding around the h2 */
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    
+    .services h3 {
+        font-size: 2rem;
+        font-weight: normal;
+        color: #9FA0B1;
+        margin-top: -50px; /* Add top margin to create space above the h3 */
+    }
+
+    .hero {
+        height: 300px; /* Adjust hero height */
+    }
+
+    .contact-info {
+        font-size: 0.5rem; /* Adjust font size for mobile */
+        white-space: nowrap; /* Prevent wrapping */
+        overflow: hidden; /* Handle overflow gracefully */
+        text-overflow: ellipsis; /* Add '...' if text is too long */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .services-container {
+        flex-direction: column; /* Stack services vertically */
+        align-items: center;
+    }
+
+    .service-box {
+        margin: 10px 0; /* Reduce margin between boxes */
+        padding: 15px;
+    }
+
+    .service-box h4 {
+        margin-left: 60px;
+    }
+
+    .service-box p {
+        margin-left: 60px;
+    }
+}
