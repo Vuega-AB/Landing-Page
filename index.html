@@ -51,6 +51,96 @@
             </div>
         </div>        
     </section>
+    <section class="scrolling-boxes">
+        <div class="scrolling-content">
+            <div class="text-column">
+                <h2>Explore Our Features</h2>
+                <p>Discover the various features that make our applications user-friendly and effective. Each feature is designed with the user in mind, ensuring a seamless experience.</p>
+            </div>
+    
+            <div class="boxes-wrapper">
+                <!-- Column 1 -->
+                <div class="boxes-column" id="column1">
+                    <div class="box">
+                        <img src="feature1.png" alt="Feature 1">
+                        <h4>Feature 1</h4>
+                        <p>Description of feature 1.</p>
+                    </div>
+                    <div class="box">
+                        <img src="feature2.png" alt="Feature 2">
+                        <h4>Feature 2</h4>
+                        <p>Description of feature 2.</p>
+                    </div>
+                    <div class="box">
+                        <img src="feature3.png" alt="Feature 3">
+                        <h4>Feature 3</h4>
+                        <p>Description of feature 3.</p>
+                    </div>
+                </div>
+                
+    
+                <!-- Column 2 -->
+                <div class="boxes-column" id="column2">
+                    <div class="box">
+                        <img src="feature4.png" alt="Feature 4">
+                        <h4>Feature 4</h4>
+                        <p>Description of feature 4.</p>
+                    </div>
+                    <div class="box">
+                        <img src="feature5.png" alt="Feature 5">
+                        <h4>Feature 5</h4>
+                        <p>Description of feature 5.</p>
+                    </div>
+                    <div class="box">
+                        <img src="feature6.png" alt="Feature 6">
+                        <h4>Feature 6</h4>
+                        <p>Description of feature 6.</p>
+                    </div>
+                </div>
+    
+                <!-- Column 3 -->
+                <div class="boxes-column" id="column3">
+                    <div class="box">
+                        <img src="feature7.png" alt="Feature 7">
+                        <h4>Feature 7</h4>
+                        <p>Description of feature 7.</p>
+                    </div>
+                    <div class="box">
+                        <img src="feature8.png" alt="Feature 8">
+                        <h4>Feature 8</h4>
+                        <p>Description of feature 8.</p>
+                    </div>
+                    <div class="box">
+                        <img src="feature9.png" alt="Feature 9">
+                        <h4>Feature 9</h4>
+                        <p>Description of feature 9.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Function to duplicate items in each column for seamless scrolling
+        function duplicateItems() {
+            const columns = document.querySelectorAll('.boxes-column');
+    
+            columns.forEach(column => {
+                const items = column.children; // Get all boxes in the column
+                const itemsArray = Array.from(items); // Convert to array
+    
+                // Clone each item and append it to the column
+                itemsArray.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    column.appendChild(clone);
+                });
+            });
+        }
+    
+        // Call the function to duplicate items on page load
+        window.onload = duplicateItems;
+    </script>    
+    
 
 </body>
 </html>

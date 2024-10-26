@@ -58,20 +58,6 @@ body::-webkit-scrollbar {
 }
 
 
-/* Navbar (below the top bar) */
-/* .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 10px 20px;
-    margin-top: 60px; 
-    position: sticky;
-    top: 60px;
-    z-index: 999;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-} */
-
 /* Hero Section */
 .hero {
     background: url('background.png') no-repeat center top; /* Focus on the top of the image */
@@ -179,8 +165,6 @@ body::-webkit-scrollbar {
         height: auto;
     }
 
-    
-
     .hero-content h1 {
         font-size: 2rem; /* Adjusted font size for mobile */
         margin-bottom: 0px;
@@ -245,4 +229,79 @@ body::-webkit-scrollbar {
     .service-box p {
         margin-left: 60px;
     }
+}
+
+.scrolling-boxes {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrolling-content {
+    display: flex;
+    width: 100%;
+}
+
+.text-column {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Wrapper for scrolling boxes */
+.boxes-wrapper {
+    display: flex; /* Set to flex to position columns side by side */
+    flex: 2; /* Adjust flex property to control width */
+    height: 300px; /* Set a height for scrolling */
+    overflow: hidden;
+}
+
+/* Styling the columns */
+.boxes-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    width: 33%; /* Set width for three columns */
+    animation: scroll 2s linear infinite; /* Apply scrolling animation */
+}
+
+/* Individual box styling */
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.box img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%); /* Adjust this value based on the total height of items */
+    }
+}
+
+/* Duplicate last item for smooth looping */
+.boxes-column {
+    position: relative; /* Required for absolute position of clones */
+}
+
+/* To avoid jump, ensure each column has sufficient height to animate */
+.boxes-column .box {
+    /* Add this if you have varying box heights */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
