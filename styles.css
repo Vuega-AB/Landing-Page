@@ -173,85 +173,88 @@ body::-webkit-scrollbar {
 
 .projects-list {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-item {
     display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between image and details */
-    margin: 20px 0; /* Space between project items */
-    width: 100vw; /* Full screen width */
-    min-height: 100vh; /* Full screen height */
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    min-height: 80vh;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .project-item.left {
-    flex-direction: row; /* Image on the left, details on the right */
+    flex-direction: row;
 }
 
 .project-item.right {
-    flex-direction: row-reverse; /* Image on the right, details on the left */
+    flex-direction: row-reverse;
 }
 
 .project-item img {
-    width: 100%; /* Set a specific width for the image */
+    width: 50%; /* Limit image width to 45% of the container */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 2%; /* Space between image and text */
+    margin: 0 1%;
+    object-fit: contain;
 }
 
 .project-details {
-    text-align: left; /* Align text to the left */
-    width: 100%;
+    text-align: left;
+    max-width: 50%; /* Limit text section width to avoid overlap */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .project-details h3 {
-    font-size: 2.75rem; /* Project title size */
+    font-size: 2.75rem;
 }
 
 .project-details p {
-    font-size: 1.2rem; /* Project description size */
-    margin: 10px 0; /* Space between description and link */
+    font-size: 1.2rem;
+    margin: 10px 0;
     color: #4d5663;
 }
 
 .try-it-button {
     display: inline-flex;
     align-items: center;
-    background-color: #e0f2fe; /* Light blue background */
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 10px 0px;
     text-decoration: none;
-    color: #000; /* Black text */
-    font-weight: bold;
-    font-size: 1rem;
+    color: #4d5663;
+    font-size: 1.2rem;
     transition: transform 0.2s;
 }
 
-.try-it-button:hover {
-    transform: scale(1.05); /* Slightly increase size on hover */
+.try-it-button a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    margin-left: 5px;
 }
 
 .try-it-button .icon img {
-    width: 30px; /* Adjust icon size as needed */
-    height: 30px;
+    width: 40px;
+    height: 40px;
     padding: 0 5px;
-}
-
-.try-it-button .arrow {
-    font-size: 1.2rem;
-    margin-left: 8px;
-    color: #0252C9; /* Same blue for the arrow */
+    object-fit: contain;
+    background-color: #e0f2fe;
+    border-radius: 5px;
 }
 
 
-#blue_text{
+#blue_text {
     color: #0252C9;
 }
+
 .inline-text {
-    display: inline; /* or use inline-block */
-    margin-right: 5px; /* Adjust spacing between the texts as needed */
+    display: inline;
+    margin-right: 5px;
 }
+
 
 
 
