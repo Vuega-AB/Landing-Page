@@ -260,6 +260,26 @@ body::-webkit-scrollbar {
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
+    .project-item.left {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .project-item.right {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .project-item img {
+        width: 100%; /* Full width for the image */
+        margin: 0 5px 0 0; /* Add space below the image */
+    }
+
+    .project-details {
+        max-width: 100%; /* Full width for text section */
+    }
+
+    .try-it-button {
+        justify-content: center; /* Center the button */
+    }
     .top-bar {
         flex-direction: row; /* Keep items in a row */
         align-items: center; /* Vertically align logo and contact info */
@@ -340,75 +360,221 @@ body::-webkit-scrollbar {
 
 .scrolling-boxes {
     display: flex;
-    justify-content: center;
-    padding: 50px 20px;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 30px 20px;
     overflow: hidden;
     position: relative;
-}
+    gap: 20px;
+    box-sizing: border-box; /* Include padding in height calculation */
+}  
 
 .scrolling-content {
     display: flex;
-    width: 100%;
-}
+    width: 80%; /* Adjust width as needed */
+    max-width: 1200px; /* Prevent it from becoming too wide */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space out text and boxes */
+} 
 
 .text-column {
     flex: 1;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; /* Spacing between text items */
 }
 
-/* Wrapper for scrolling boxes */
 .boxes-wrapper {
-    display: flex; /* Set to flex to position columns side by side */
-    flex: 2; /* Adjust flex property to control width */
-    height: 300px; /* Set a height for scrolling */
+    display: flex;
+    height: 400px; 
     overflow: hidden;
+    position: relative;
+    gap: 10px;
 }
 
-/* Styling the columns */
+.boxes-wrapper::before,
+.boxes-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, white, transparent); /* Fade effect */
+    z-index: 1;
+}
+
+.boxes-wrapper::before {
+    top: 0;
+    background: linear-gradient(to bottom, white, transparent);
+}
+
+
+.boxes-wrapper::after {
+    bottom: 0; /* Position at the bottom */
+    background: linear-gradient(to top, white, transparent); /* Reverse gradient for bottom */
+}
+
+
 .boxes-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align items to the top */
-    width: 33%; /* Set width for three columns */
-    animation: scroll 2s linear infinite; /* Apply scrolling animation */
+    justify-content: flex-start;
+    width: 33%; 
+    animation: smooth-scroll 10s linear infinite;
 }
 
-/* Individual box styling */
 .box {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 15px;
+    padding: 42px;
     background-color: #f3f3f3;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px; /* Add margin for spacing */
+    border-radius: 20px;
+    margin: 5px 0; /* Add margin here for vertical spacing */
 }
 
 .box img {
-    width: 80%;
-    height: auto;
+    width: 50px; /* or any percentage you prefer */
+    max-width: 100%; /* Ensures the image doesn’t exceed the box */
+    height: auto; /* Maintain aspect ratio */
     margin-bottom: 10px;
 }
 
-@keyframes scroll {
+
+.middle-column {
+    animation: smooth-scroll-reverse 10s linear infinite; /* Reverse scroll for middle column */
+}
+
+
+.text-item {
+    font-size: 18px;
+    line-height: 40px; /* Match height to box size */
+}
+/* Original animation */
+@keyframes smooth-scroll {
+    0% {
+        transform: translateY(0); /* Start at original position */
+    }
+    100% {
+        transform: translateY(-128%); /* Move up */
+    }
+}
+
+/* Reverse animation */
+@keyframes smooth-scroll-reverse {
+    0% {
+        transform: translateY(-130%); /* Start at the top (hidden) */
+    }
+    100% {
+        transform: translateY(0); /* Move down into view */
+    }
+}
+
+.boxes-wrapper1 {
+    display: flex;
+    height: 600px; 
+    overflow: hidden;
+    position: relative;
+    gap: 10px;
+}
+
+.boxes-wrapper1::before,
+.boxes-wrapper1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, white, transparent); /* Fade effect */
+    z-index: 1;
+}
+
+.boxes-wrapper1::before {
+    top: 0;
+    background: linear-gradient(to bottom, white, transparent);
+}
+
+
+.boxes-wrapper1::after {
+    bottom: 0; /* Position at the bottom */
+    background: linear-gradient(to top, white, transparent); /* Reverse gradient for bottom */
+}
+
+
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* padding: 42px; */
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    margin: 5px 0; /* Add margin here for vertical spacing */
+}
+
+.box1 img {
+    width: 200px; /* or any percentage you prefer */
+    height: auto; /* Maintain aspect ratio */
+    /* margin-bottom: 10px; */
+}
+
+.left-column1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33%; 
+    animation: smooth-scroll-left1 20s linear infinite;
+}
+
+.right-column1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33%; 
+    animation: smooth-scroll-right1 20s linear infinite;
+}
+
+
+.middle-column1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33%; 
+    animation: smooth-scroll-reverse1 25s linear infinite; /* Reverse scroll for middle column */
+}
+
+@keyframes smooth-scroll-left1 {
     0% {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-100%); /* Adjust this value based on the total height of items */
+        transform: translateY(-317%);
     }
 }
 
-/* Duplicate last item for smooth looping */
-.boxes-column {
-    position: relative; /* Required for absolute position of clones */
+@keyframes smooth-scroll-right1 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-300%);
+    }
 }
 
-/* To avoid jump, ensure each column has sufficient height to animate */
-.boxes-column .box {
-    /* Add this if you have varying box heights */
-    transition: transform 0.5s ease-in-out; /* Smooth transition */
+/* Reverse animation */
+@keyframes smooth-scroll-reverse1 {
+    0% {
+        transform: translateY(-300%); /* Start at the top (hidden) */
+    }
+    100% {
+        transform: translateY(0); /* Move down into view */
+    }
 }
