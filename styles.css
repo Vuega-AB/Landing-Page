@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
 
 /* Hero Section */
 .hero {
-    background: url('background.png') no-repeat center top; /* Focus on the top of the image */
+    background: url('photos/background.png') no-repeat center top; /* Focus on the top of the image */
     background-position: center 10%; /* Adjusts the image slightly downwards while keeping the top part in focus */
     background-size: cover; /* Ensure the image covers the entire area */
     height: 480px;
