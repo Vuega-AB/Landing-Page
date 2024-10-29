@@ -276,9 +276,19 @@ body::-webkit-scrollbar {
     .project-details {
         max-width: 100%; /* Full width for text section */
     }
+    .project-details h3{
+        font-size: 1.8rem;
+    }
+
+    .project-details p{
+        font-size: 1rem;
+    }
 
     .try-it-button {
         justify-content: center; /* Center the button */
+    }
+    .try-it-button span {
+        font-size: 1rem;
     }
     .top-bar {
         flex-direction: row; /* Keep items in a row */
