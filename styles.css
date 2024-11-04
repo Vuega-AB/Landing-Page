@@ -356,6 +356,56 @@ body::-webkit-scrollbar {
     .service-box p {
         margin-left: 60px;
     }
+
+    .scrolling-boxes {
+        display: block !important;
+    }
+
+    .text-column,
+    .boxes-wrapper {
+        width: 100% !important;
+    }
+
+    .scrolling-content {
+        flex-direction: column !important;
+        width: 100% !important; /* Full width on mobile */
+        align-items: center !important;
+    }
+
+    .boxes-wrapper {
+        width: 100% !important; /* Full width for the box wrappers */
+        height: 334px !important; /* Adjust height for mobile */
+    }
+
+    .boxes-column {
+        width: 100% !important; /* Full width for each column */
+    }
+
+    .box {
+        padding: 10px !important; /* Smaller padding for boxes */
+        width: 90% !important; /* Adjust box width on mobile */
+        margin: 5px auto !important; /* Center boxes */
+    }
+
+    .box img {
+        width: 80px !important; /* Adjust image size for mobile */
+    }
+
+    .text-item {
+        font-size: 16px !important; /* Smaller text size for mobile */
+    }
+    
+    .box1 img {
+        width: 200px; /* or any percentage you prefer */
+        max-width: 100%; /* Ensures the image doesn’t exceed the box */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 10px;
+    }
+
+    .boxes-wrapper1 {
+        width: 100% !important; /* Full width for the box wrappers */
+        height: 330px !important; /* Adjust height for mobile */
+    }
 }
 
 .scrolling-boxes {
@@ -375,6 +425,7 @@ body::-webkit-scrollbar {
     max-width: 1200px; /* Prevent it from becoming too wide */
     align-items: center; /* Center vertically */
     justify-content: space-between; /* Space out text and boxes */
+
 } 
 
 .text-column {
@@ -383,6 +434,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    text-align: center;
     gap: 10px; /* Spacing between text items */
 }
 
@@ -474,6 +526,8 @@ body::-webkit-scrollbar {
     }
 }
 
+
+/*****************************************************/
 .boxes-wrapper1 {
     display: flex;
     height: 600px; 
@@ -511,17 +565,19 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* padding: 42px; */
+    /* padding: 1px; */
     background-color: #f3f3f3;
     border-radius: 20px;
     margin: 5px 0; /* Add margin here for vertical spacing */
 }
+
 
 .box1 img {
     width: 200px; /* or any percentage you prefer */
     height: auto; /* Maintain aspect ratio */
     /* margin-bottom: 10px; */
 }
+
 
 .left-column1{
     display: flex;
@@ -541,6 +597,15 @@ body::-webkit-scrollbar {
     animation: smooth-scroll-right1 20s linear infinite;
 }
 
+.text-column1 {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 10px; /* Spacing between text items */
+}
 
 .middle-column1 {
     display: flex;
