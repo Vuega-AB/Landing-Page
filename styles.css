@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
 
 /* Hero Section */
 .hero {
-    background: url('https://res.cloudinary.com/dwdrbmeng/image/upload/v1730688335/landing%20page%20photos/xpqob7szrhivicji7wve.png') no-repeat center top; /* Focus on the top of the image */
+    background: url('/images/xpqob7szrhivicji7wve.webp') no-repeat center top; /* Focus on the top of the image */
     background-position: center 10%; /* Adjusts the image slightly downwards while keeping the top part in focus */
     background-size: cover; /* Ensure the image covers the entire area */
     height: 480px;
